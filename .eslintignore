@@ -1,0 +1,6 @@
+/demo
+/node_modules
+/dist
+
+/src/lib/*
+/src/core/camera-controls/*

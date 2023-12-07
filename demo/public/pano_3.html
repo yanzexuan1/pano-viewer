@@ -1,0 +1,78 @@
+<html>
+
+<head>
+    <link rel="icon" href="/favicon.ico">
+    <link rel="stylesheet" type="text/css" href="/global.css">
+    <style>
+        #myCanvas {
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <div id="myCanvas" class="container"></div>
+    </div>
+    <script type="module">
+        import { PanoViewer } from "./dist/pano-viewer.esm.js";
+
+        // in order of right, left, up/top, down/bottom, front, back
+        const image24 = [
+            "/images/panos/pano_3/l4_r_1_1.jpg",
+            "/images/panos/pano_3/l4_r_1_2.jpg",
+            "/images/panos/pano_3/l4_r_2_1.jpg",
+            "/images/panos/pano_3/l4_r_2_2.jpg",
+            "/images/panos/pano_3/l4_l_1_1.jpg",
+            "/images/panos/pano_3/l4_l_1_2.jpg",
+            "/images/panos/pano_3/l4_l_2_1.jpg",
+            "/images/panos/pano_3/l4_l_2_2.jpg",
+            "/images/panos/pano_3/l4_u_1_1.jpg",
+            "/images/panos/pano_3/l4_u_1_2.jpg",
+            "/images/panos/pano_3/l4_u_2_1.jpg",
+            "/images/panos/pano_3/l4_u_2_2.jpg",
+            "/images/panos/pano_3/l4_d_1_1.jpg",
+            "/images/panos/pano_3/l4_d_1_2.jpg",
+            "/images/panos/pano_3/l4_d_2_1.jpg",
+            "/images/panos/pano_3/l4_d_2_2.jpg",
+            "/images/panos/pano_3/l4_f_1_1.jpg",
+            "/images/panos/pano_3/l4_f_1_2.jpg",
+            "/images/panos/pano_3/l4_f_2_1.jpg",
+            "/images/panos/pano_3/l4_f_2_2.jpg",
+            "/images/panos/pano_3/l4_b_1_1.jpg",
+            "/images/panos/pano_3/l4_b_1_2.jpg",
+            "/images/panos/pano_3/l4_b_2_1.jpg",
+            "/images/panos/pano_3/l4_b_2_2.jpg",
+        ];
+        const image6 = [
+            "/images/panos/pano_3/l1_r.jpg",
+            "/images/panos/pano_3/l1_l.jpg",
+            "/images/panos/pano_3/l1_u.jpg",
+            "/images/panos/pano_3/l1_d.jpg",
+            "/images/panos/pano_3/l1_f.jpg",
+            "/images/panos/pano_3/l1_b.jpg",
+        ];
+        const viewpoints = [{
+            panoramas: [{
+                id: "panorama_1",
+                images: image24,
+                thumbnails: image6,
+            }],
+            id: "viewpoint_1",
+            name: "客厅",
+            position: [0, 1, 0],
+            initialDirection: [0, 0, -1],
+        }];
+        const config = {
+            containerId: "myCanvas",
+        }
+        const viewer = new PanoViewer(config);
+        viewer.setViewpoints(viewpoints);
+        viewer.activatePanoramaById(viewpoints[0].id, viewpoints[0].panoramas[0].id);
+        window.viewer = viewer;
+    </script>
+</body>
+
+</html>

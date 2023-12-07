@@ -1,0 +1,57 @@
+<html>
+
+<head>
+    <link rel="icon" href="/favicon.ico">
+    <link rel="stylesheet" type="text/css" href="/global.css">
+    <style>
+        #myCanvas {
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <div id="myCanvas" class="container"></div>
+    </div>
+    <script type="module">
+        import { PanoViewer } from "./dist/pano-viewer.esm.js";
+
+        const viewpoints = [{
+            panoramas: [{
+                id: "panorama_1",
+                images: [
+                    "/images/panos/pano_2/right.jpg",
+                    "/images/panos/pano_2/left.jpg",
+                    "/images/panos/pano_2/top.jpg",
+                    "/images/panos/pano_2/bottom.jpg",
+                    "/images/panos/pano_2/front.jpg",
+                    "/images/panos/pano_2/back.jpg",
+                ],
+                thumbnails: [
+                    "/images/panos/pano_2/thumbnail/right.jpg",
+                    "/images/panos/pano_2/thumbnail/left.jpg",
+                    "/images/panos/pano_2/thumbnail/top.jpg",
+                    "/images/panos/pano_2/thumbnail/bottom.jpg",
+                    "/images/panos/pano_2/thumbnail/front.jpg",
+                    "/images/panos/pano_2/thumbnail/back.jpg",
+                ],
+            }],
+            id: "viewpoint_1",
+            name: "客厅",
+            position: [0, 1, 0],
+            initialDirection: [0, 0, 1],
+        }];
+        const config = {
+            containerId: "myCanvas",
+        }
+        const viewer = new PanoViewer(config);
+        viewer.setViewpoints(viewpoints);
+        viewer.activatePanoramaById(viewpoints[0].id, viewpoints[0].panoramas[0].id);
+        window.viewer = viewer;
+    </script>
+</body>
+
+</html>

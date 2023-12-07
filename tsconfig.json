@@ -1,0 +1,38 @@
+{
+  "ts-node": {
+    "files": true,
+    "compilerOptions": {
+      "module": "esnext",
+      "target": "es2017",
+      "moduleResolution": "node",
+      "resolveJsonModule": true,
+      "esModuleInterop": true
+    },
+    "exclude": ["node_modules", "dist"],
+  },
+  "compilerOptions": {
+    "baseUrl": ".",
+    "rootDir": "./src",
+    "outDir": "./dist/types",
+    "declaration": true,
+    "declarationDir": "dist/types",
+    "strict": true,
+    "allowSyntheticDefaultImports": true,
+    "downlevelIteration": true,
+    "resolveJsonModule": true,
+    "sourceMap": true,
+    "module": "esnext",
+    "target": "ES5",
+    "moduleResolution": "node",
+    "lib": ["dom", "ES2015"],
+    "noImplicitAny": true,
+    "emitDeclarationOnly": true,
+    "skipLibCheck": true,
+    "paths": {
+      "@": ["src"],
+      "src/*": ["./src/*"]
+    }
+  },
+  "include": ["src/**/*"],
+  "exclude": ["node_modules", "dist", "esbuild.config.ts"]
+}

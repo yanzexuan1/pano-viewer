@@ -1,0 +1,37 @@
+$yellow: #f99d0b;
+$red: #c9322f;
+$green: #15a05a;
+
+$blue: #1894bd;
+$blue2: #2c7be5;
+
+$grey: #999999;
+$grey2: #666666;
+$grey-o50: rgba(153, 153, 153, 0.8);
+
+$white: #fff;
+$white2: rgba(255, 255, 255, 0.8);
+
+$black: #141414;
+
+// Common
+$active: $blue2;
+
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@-webkit-keyframes spin {
+    from {
+        -webkit-transform: rotate(0deg);
+    }
+    to {
+        -webkit-transform: rotate(360deg);
+    }
+}
