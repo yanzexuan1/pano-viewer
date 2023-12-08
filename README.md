@@ -1,15 +1,10 @@
 # pano-viewer
 pano-viewer is a WebGL based JS SDK, it is built on top of three.js. It is used to view panoramas. It supports viewing a panorama with 1 image, 6 images, or 24 images; It supports viewing a serials of panoramas; It supports hotpoints;
 
-## Installation
-To install from npm:
-```
-npm install pano-viewer
-```
 
 ## Examples
 ``` typescript
-import { PanoViewer, PanoViewerConfig } from "pano-viewer";
+import { PanoViewer, PanoViewerConfig } from "./dist/pano-viewer.esm.js";
 
 const viewerCfg: PanoViewerConfig = {
     containerId: "myCanvas",

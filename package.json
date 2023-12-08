@@ -1,7 +1,7 @@
 {
     "name": "pano-viewer",
     "version": "0.1.0",
-    "homepage": "https://pano-viewer.github.io/pano-viewer/",
+    "homepage": "https://github.com/yanzexuan1/pano-viewer",
     "module": "dist/pano-viewer.esm.min.js",
     "main": "dist/pano-viewer.esm.min.js",
     "types": "dist/types/index.d.ts",
