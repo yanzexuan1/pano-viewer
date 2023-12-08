@@ -19,6 +19,9 @@ type ViewerEvents = {
 };
 
 export abstract class BaseViewer extends Event<ViewerEvents> {
+    /**
+     * @internal
+     */
     name = ViewerName.BaseViewer;
     protected viewerCfg: BaseViewerConfig;
 
@@ -29,6 +32,9 @@ export abstract class BaseViewer extends Event<ViewerEvents> {
      * @internal
      */
     protected requestAnimationFrameHandle?: number;
+    /**
+     * @internal
+     */
     container: Container;
 
     protected plugins: Plugin[] = [];
@@ -92,10 +98,16 @@ export abstract class BaseViewer extends Event<ViewerEvents> {
         return this.container.widgetContainer as HTMLElement;
     }
 
+    /**
+     * @internal
+     */
     getInputManager() {
         return this.inputManager;
     }
 
+    /**
+     * @internal
+     */
     getCameraManager() {
         return this.cameraManager;
     }
@@ -131,6 +143,9 @@ export abstract class BaseViewer extends Event<ViewerEvents> {
         return this.viewerCfg;
     }
 
+    /**
+     * @internal
+     */
     getSpinner() {
         return this.spinner;
     }
@@ -209,22 +224,6 @@ export abstract class BaseViewer extends Event<ViewerEvents> {
         return size;
     }
 
-    public flyToObject(object: THREE.Object3D) {
-        this.cameraManager.flyToObject(object);
-    }
-
-    public flyToObjects(objects: THREE.Object3D[]) {
-        const bbox = new THREE.Box3();
-        objects.forEach((object) => {
-            const box = new THREE.Box3().setFromObject(object);
-            bbox.union(box);
-        });
-
-        const sphere = new THREE.Sphere();
-        bbox.getBoundingSphere(sphere);
-        this.cameraManager.fitToSphere(sphere);
-    }
-
     /**
      * Make camera fly to target position with given lookAt position
      * @param position camera's target position
@@ -266,6 +265,7 @@ export abstract class BaseViewer extends Event<ViewerEvents> {
 
     /**
      * Goes to home view
+     * @internal
      */
     public goToHomeView() {
         if (!this.homeView) {
@@ -294,6 +294,8 @@ export abstract class BaseViewer extends Event<ViewerEvents> {
             c.setRGB(r, g, b, this.renderer.outputColorSpace);
             this.scene.background.copy(c);
         }
+        // need to trigger a render() call
+        this.renderer.render(this.scene, this.camera);
     }
 
     public enableControl(enable: boolean) {
@@ -308,6 +310,9 @@ export abstract class BaseViewer extends Event<ViewerEvents> {
         this.cameraManager.enableZoom(enable);
     }
 
+    /**
+     * @internal
+     */
     public enablePan(enable: boolean) {
         this.cameraManager.enablePan(enable);
     }
@@ -316,6 +321,9 @@ export abstract class BaseViewer extends Event<ViewerEvents> {
         return this.cameraManager.getCameraInfo();
     }
 
+    /**
+     * @internal
+     */
     public setCameraInfo(cameraInfo: CameraInfo) {
         return this.cameraManager.setCameraInfo(cameraInfo);
     }
@@ -353,6 +361,7 @@ export abstract class BaseViewer extends Event<ViewerEvents> {
 
     /**
      * Installs a Plugin.
+     * @internal
      */
     addPlugin(plugin: Plugin) {
         const p = this.plugins.find((p) => p.id === plugin.id);
@@ -366,6 +375,7 @@ export abstract class BaseViewer extends Event<ViewerEvents> {
 
     /**
      * Uninstalls a Plugin, clearing content from it first.
+     * @internal
      */
     removePlugin(plugin: Plugin) {
         for (let i = 0, len = this.plugins.length; i < len; i++) {
@@ -380,6 +390,7 @@ export abstract class BaseViewer extends Event<ViewerEvents> {
     /**
      * Clears all plugins.
      * A plugin is not created by viewer, thus, won't be destroyed by viewer.
+     * @internal
      */
     clearPlugins() {
         this.plugins = [];
@@ -387,6 +398,7 @@ export abstract class BaseViewer extends Event<ViewerEvents> {
 
     /**
      * Finds a Plugin.
+     * @internal
      */
     findPlugin(id: string): Plugin | undefined {
         return this.plugins.find((p) => p.id === id);

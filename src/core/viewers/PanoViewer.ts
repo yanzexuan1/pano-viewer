@@ -18,6 +18,9 @@ import { ViewerEvent } from "src/core/viewers/ViewerEvent";
  * Panorama viewer.
  */
 export class PanoViewer extends BaseViewer {
+    /**
+     * @internal
+     */
     name = ViewerName.PanoViewer;
 
     private viewpoints: PanoViewpoint[] = [];

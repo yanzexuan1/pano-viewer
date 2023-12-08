@@ -1,5 +1,6 @@
 /**
  * Camera config
+ * @internal
  */
 export interface CameraConfig {
     /**
