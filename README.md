@@ -60,4 +60,11 @@ npm run docs
 ```
 Documents will be generated into "./docs" folder.
 
+## Features
+- Load and view a panorama
+<img src="public/demo/images/snapshots/pano_load_and_view.gif" width="600">
+- Switch to another panorama
+<img src="public/demo/images/snapshots/pano_switch_panos.gif" width="600">
+- Switch between decorations
+<img src="public/demo/images/snapshots/pano_switch_decorations.gif" width="600">
 `End`
