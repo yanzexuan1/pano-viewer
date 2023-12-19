@@ -57,12 +57,12 @@ export class LocalImageUploader extends IUploader {
             };
 
             // try to find corresponding images
-            const right = tryFindAndCreateUrl(["right", "r"]);
-            const left = tryFindAndCreateUrl(["left", "l"]);
-            const up = tryFindAndCreateUrl(["up", "top", "u"]);
-            const down = tryFindAndCreateUrl(["down", "bottom", "d"]);
-            const front = tryFindAndCreateUrl(["front", "f"]);
-            const back = tryFindAndCreateUrl(["back", "b"]);
+            const right = tryFindAndCreateUrl(["right", "r", "pano_r"]);
+            const left = tryFindAndCreateUrl(["left", "l", "pano_l"]);
+            const up = tryFindAndCreateUrl(["up", "top", "u", "pano_u"]);
+            const down = tryFindAndCreateUrl(["down", "bottom", "d", "pano_d"]);
+            const front = tryFindAndCreateUrl(["front", "f", "pano_f"]);
+            const back = tryFindAndCreateUrl(["back", "b", "pano_b"]);
 
             const images = [right, left, up, down, front, back];
             viewpoint.panoramas.push({ id: "panorama_1", images });
