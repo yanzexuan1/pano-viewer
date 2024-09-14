@@ -1,7 +1,7 @@
 {
     "name": "pano-viewer",
-    "version": "0.1.0",
-    "homepage": "https://github.com/yanzexuan1/pano-viewer",
+    "version": "0.2.0",
+    "homepage": "",
     "module": "dist/pano-viewer.esm.min.js",
     "main": "dist/pano-viewer.esm.min.js",
     "types": "dist/types/index.d.ts",
@@ -28,6 +28,8 @@
         "webgl",
         "threejs",
         "three.js",
+        "panorama",
+        "pano",
         "javascript",
         "typescript"
     ],
@@ -42,7 +44,7 @@
         "loglevel": "^1.8.0",
         "screenfull": "^6.0.0",
         "terser": "^5.25.0",
-        "three": "^0.158.0"
+        "three": "^0.167.0"
     },
     "devDependencies": {
         "@fal-works/esbuild-plugin-global-externals": "^2.1.2",
@@ -50,7 +52,7 @@
         "@types/node": "^18.11.19",
         "@types/resize-observer-browser": "^0.1.7",
         "@types/sha256": "^0.2.0",
-        "@types/three": "^0.158.0",
+        "@types/three": "^0.167.0",
         "@typescript-eslint/eslint-plugin": "^5.0.0",
         "@typescript-eslint/parser": "^5.47.1",
         "esbuild": "^0.16.17",

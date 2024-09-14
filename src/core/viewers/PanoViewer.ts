@@ -30,7 +30,7 @@ export class PanoViewer extends BaseViewer {
     private enableCache: boolean;
     private autoRotateSpeed = 2.0;
     private autoRotate = true;
-    private enableAutoRotate = true;
+    private enableAutoRotate = false;
     private delayAutoRotateTimeout?: NodeJS.Timeout;
 
     constructor(viewerCfg: PanoViewerConfig) {
