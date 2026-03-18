@@ -5,7 +5,8 @@ import path from "path";
 import { fileURLToPath } from "url";
 
 import { globalExternals } from "@fal-works/esbuild-plugin-global-externals";
-import esbuild, { BuildOptions, OnLoadArgs, PluginBuild } from "esbuild";
+import esbuild from "esbuild";
+import type { BuildOptions, OnLoadArgs, PluginBuild } from "esbuild";
 import inlineWorkerPlugin from "esbuild-plugin-inline-worker";
 import sassPlugin from "esbuild-plugin-sass";
 import { ESLint } from "eslint";
