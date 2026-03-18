@@ -1,7 +1,8 @@
 {
     "name": "pano-viewer",
     "version": "0.2.0",
-    "homepage": "",
+    "description": "A WebGL-based 360° panorama viewer SDK built on three.js. Supports equirectangular images, cubemaps, multi-viewpoint tours, hotpoints, and custom 3D decorations.",
+    "homepage": "https://github.com/yourusername/pano-viewer#readme",
     "module": "dist/pano-viewer.esm.min.js",
     "main": "dist/pano-viewer.esm.min.js",
     "types": "dist/types/index.d.ts",
@@ -22,19 +23,30 @@
         "/dist"
     ],
     "repository": {
-        "type": "git"
+        "type": "git",
+        "url": "https://github.com/yourusername/pano-viewer.git"
     },
     "keywords": [
         "webgl",
         "threejs",
         "three.js",
         "panorama",
+        "360",
+        "360-viewer",
+        "panorama-viewer",
+        "virtual-tour",
+        "equirectangular",
+        "cubemap",
+        "hotspot",
         "pano",
         "javascript",
-        "typescript"
+        "typescript",
+        "vr",
+        "real-estate",
+        "immersive"
     ],
     "author": "pano-viewer",
-    "license": "UNLICENSED",
+    "license": "MIT",
     "dependencies": {
         "@types/lodash": "^4.14.165",
         "@types/resize-observer-browser": "^0.1.7",
