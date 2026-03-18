@@ -1,5 +1,5 @@
 {
-    "name": "pano-viewer",
+    "name": "@x-viewer/pano-viewer",
     "version": "0.2.0",
     "description": "A WebGL-based 360° panorama viewer SDK built on three.js. Supports equirectangular images, cubemaps, multi-viewpoint tours, hotpoints, and custom 3D decorations.",
     "homepage": "https://github.com/yourusername/pano-viewer#readme",
